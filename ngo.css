@@ -1,0 +1,410 @@
+/* Basic Reset and Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif; /* Using Google Font */
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Lighter background */
+    color: #343a40; /* Darker text for better contrast */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #007bff; /* Primary blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Using Google Font */
+    color: #212529; /* Darker heading color */
+}
+
+/* Header and Navigation */
+header {
+    background: #ffffff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* More prominent shadow */
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8rem; /* Larger logo */
+    font-weight: 700;
+    color: #28a745; /* NGO primary color */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 30px; /* More spacing */
+}
+
+.nav-menu a {
+    color: #495057; /* Subtler nav link color */
+    font-weight: 600;
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-menu a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #28a745;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+    left: 0;
+    background: #28a745;
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #343a40;
+}
+
+/* Hero Section (Home Page) */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x900/4CAF50/FFFFFF?text=NGO+Hero+Image') no-repeat center center/cover; /* Gradient overlay + image */
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px; /* More padding for a grander feel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Minimum height for hero */
+}
+.hero h2 {
+    font-size: 3.5rem; /* Larger heading */
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background-color: #28a745; /* NGO primary color */
+    color: #fff;
+    padding: 15px 30px; /* Larger button */
+    border-radius: 50px; /* Pill-shaped button */
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Allows padding and transform */
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-3px); /* Lift effect on hover */
+    text-decoration: none;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0; /* More vertical spacing */
+    overflow: hidden; /* Clear floats/prevent horizontal scroll */
+}
+
+section:nth-of-type(even) { /* Alternate background for sections */
+    background-color: #f0f2f5;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.8rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after { /* Underline effect for section titles */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #28a745;
+    border-radius: 2px;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: -30px auto 50px auto; /* Adjust margin to fit under h2 */
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+/* What We Do Section */
+.what-we-do {
+    background-color: #ffffff;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between cards */
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Softer shadow */
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+}
+
+.card img {
+    max-width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #28a745; /* Primary color for card titles */
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* About Us Section */
+.about-us {
+    background-color: #f8f9fa;
+    padding: 60px 0; /* Slightly less padding if alternate background */
+}
+
+.about-us p {
+    margin-bottom: 1.2rem;
+    text-align: center; /* Center align about us text */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+/* Volunteer Form */
+.volunteer-form {
+    background-color: #ffffff;
+    padding: 50px;
+    margin: 40px auto; /* More margin around the form section */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    max-width: 700px; /* Limit form width */
+}
+
+.form-group {
+    margin-bottom: 25px; /* More spacing */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* More spacing */
+    font-weight: 600;
+    color: #343a40;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px; /* Larger padding for inputs */
+    border: 1px solid #ced4da; /* Lighter border */
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Focus glow */
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #343a40; /* Darker footer */
+    color: #e9ecef;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px; /* More margin */
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design (Mobile-First Approach) --- */
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row; /* Keep logo and toggle on one line */
+        justify-content: space-between;
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger menu */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Below header */
+        left: 0;
+        background-color: #ffffff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: none; /* Hidden by default */
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        color: #343a40;
+        padding: 10px 0;
+        display: block;
+    }
+
+    .nav-menu a::after {
+        display: none; /* Hide underline effect on mobile menu */
+    }
+
+    .hero {
+        padding: 100px 20px;
+        min-height: 50vh;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .section-description {
+        margin-bottom: 40px;
+        font-size: 1rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; /* Stack cards on very small screens */
+    }
+
+    .card {
+        margin: 0 10px; /* Add some side margin to cards on mobile */
+    }
+
+    .about-us p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .volunteer-form {
+        margin: 20px 15px; /* Adjust margin for mobile */
+        padding: 30px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Larger screen specific styles if needed */
+}
